@@ -1,0 +1,44 @@
+https://www.youtube.com/watch?v=vlz9ina4Usk&t=1084s
+*****************************************************************************************************
+
+-- Table: public.question
+
+-- DROP TABLE IF EXISTS public.question;
+
+CREATE TABLE IF NOT EXISTS public.question
+(
+    id SERIAL NOT NULL,
+    question_title character varying(255) COLLATE pg_catalog."default",
+    option1 character varying(255) COLLATE pg_catalog."default",
+    option2 character varying(255) COLLATE pg_catalog."default",
+    option3 character varying(255) COLLATE pg_catalog."default",
+    option4 character varying(255) COLLATE pg_catalog."default",
+    right_answer character varying(255) COLLATE pg_catalog."default",
+    difficulty_level character varying(255) COLLATE pg_catalog."default",
+    category character varying COLLATE pg_catalog."default",
+    CONSTRAINT question_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.question
+    OWNER to postgres;
+
+********************************************************************************************************
+	INSERT INTO public.question(
+		id, question_title, option1, option2, option3, option4, right_answer, difficulty_level, category)
+		VALUES (1, 'Number of primitive data types in Java are?',
+				'6', '7', '8', '9', '8', 'Easy', 'Java');
+	INSERT INTO public.question(
+		id, question_title, option1, option2, option3, option4, right_answer, difficulty_level, category)
+		VALUES (2, 'What is the size of float and double in java?',
+				'32 and 64', '32 and 32', '64 and 64', '64 and 32', '32 and 64', 'Easy', 'Java');
+	INSERT INTO public.question(
+		id, question_title, option1, option2, option3, option4, right_answer, difficulty_level, category)
+		VALUES (3, 'How is a code block indicated in Python?',
+				'Brackets', 'Indentation', 'Key', 'None of this', 'Indentation', 'Easy', 'Python');
+	INSERT INTO public.question(
+		id, question_title, option1, option2, option3, option4, right_answer, difficulty_level, category)
+		VALUES (4, 'What is the maximum length of a Python identifier?',
+				'32', '16', '28', 'No fixed length is specified.', 'No fixed length is specified.', 'Easy', 'Python');
+********************************************************************************************************
